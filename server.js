@@ -31,9 +31,9 @@ app.get("/scrape", function(req, res) {
     $("thing").each(function(i, element) {
         var result = {};
         
-        result title = $(this)
+        result.title = $(this)
         .children("a")
-        .text():
+        .text();
         result.link = $(this)
         .children("a")
         .attr("href");
@@ -75,7 +75,7 @@ app.get("/streamLinks/:id", function(req, res) {
 app.post("/streamLinks/:id"), function(req, res) {
     db.Note(create(req.body)
     .then(function(dbNote) {
-        retrun db.StreamLink.findOneAndUpdate({ _id: req.params.id }, { note: dbNOte._id }, { new: true });
+        return db.StreamLink.findOneAndUpdate({ _id: req.params.id }, { note: dbNOte._id }, { new: true });
     })
     .then(function(dbStreamLink) {
         res.json(dbStreamLink);
