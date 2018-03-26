@@ -1,4 +1,4 @@
 module.exports = {
-    StreamLink: require("./StreamLinks")
+    StreamLink: require("./Streams"),
     Note: require("./Note")
 };
