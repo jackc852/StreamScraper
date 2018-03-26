@@ -28,7 +28,7 @@ app.get("/scrape", function(req, res) {
     axios.get("https://www.reddit.com/r/nbastreams/").then(function(response) {
     var $ = cheerio.load(response.data);
     
-    $("thing").each(function(i, element) {
+    $("a.title may-blank").each(function(i, element) {
         var result = {};
         
         result.title = $(this)
