@@ -18,9 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/siteScrapePopulate", {
-// useMongoClient: true
-});
+mongoose.connect("mongodb://localhost/streamPopulater");
 
 // Routes
 // GET route for scraping 
@@ -28,7 +26,7 @@ app.get("/scrape", function(req, res) {
     axios.get("https://www.reddit.com/r/nbastreams/").then(function(response) {
     var $ = cheerio.load(response.data);
     
-    $("a.title may-blank").each(function(i, element) {
+    $("p.title").each(function(i, element) {
         var result = {};
         
         result.title = $(this)

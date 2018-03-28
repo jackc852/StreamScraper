@@ -1,6 +1,6 @@
-$getJSON("/streamLinks", function(data) {
+$getJSON("/streams", function(data) {
     for (var i =0; i < data.length; i++) {
-        $("#streamLinks").append("<p data-id='" + data[i].id + "'>" + data[i].title + "<br />" + data[i].link + 
+        $("#streams").append("<p data-id='" + data[i].id + "'>" + data[i].title + "<br />" + data[i].link + 
         "</p>");
     }
 });
