@@ -18,7 +18,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/streamPopulater");
+mongoose.connect("mongodb://localhost/streamPopulater", {
+    useMongClient: true
+});
 
 // Routes
 // GET route for scraping 
