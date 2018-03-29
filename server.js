@@ -29,12 +29,8 @@ app.get("/scrape", function(req, res) {
     $("p.title").each(function(i, element) {
         var result = {};
         
-        result.title = $(this)
-        .children("a")
-        .text();
-        result.link = $(this)
-        .children("a")
-        .attr("href");
+        result.title = $(this).children("a").text();
+        result.link = $(this).children("a").attr("href");
         
         db.Streams.create(result)
         .then(function(dbStreams) {

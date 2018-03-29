@@ -1,7 +1,6 @@
-$getJSON("/streams", function(data) {
+$.getJSON("/streams", function(data) {
     for (var i =0; i < data.length; i++) {
-        $("#streams").append("<p data-id='" + data[i].id + "'>" + data[i].title + "<br />" + data[i].link + 
-        "</p>");
+        $("#streams").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
     }
 });
 
@@ -11,7 +10,7 @@ $(document).on("click", "p", function() {
 
     $.ajax({
         method: "GET",
-        url: "/articles" + thisId
+        url: "/streams" + thisId
     })
 
     .then(function(data) {
@@ -33,7 +32,7 @@ $(document).on("click", "#savenote", function() {
 
     $.ajax({
         method: "POST",
-        url: "/articles/" + thisId,
+        url: "/streams/" + thisId,
         data: {
             title: $("#titleinput").val(),
             body: $("#bodyinput").val()
@@ -46,5 +45,5 @@ $(document).on("click", "#savenote", function() {
     });
 
     $("#titleinput").val("");
-    $("#bodyinput").val("")
+    $("#bodyinput").val("");
 });
