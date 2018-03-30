@@ -10,7 +10,7 @@ $(document).on("click", "p", function() {
 
     $.ajax({
         method: "GET",
-        url: "/streams" + thisId
+        url: "/Streams/" + thisId
     })
 
     .then(function(data) {

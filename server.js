@@ -18,9 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/streamPopulater", {
-    useMongClient: true
-});
+mongoose.connect("mongodb://localhost/streamPopulater");
 
 // Routes
 // GET route for scraping 
@@ -33,6 +31,7 @@ app.get("/scrape", function(req, res) {
         
         result.title = $(this).children("a").text();
         result.link = $(this).children("a").attr("href");
+
         
         db.Streams.create(result)
         .then(function(dbStreams) {

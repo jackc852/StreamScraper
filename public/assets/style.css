@@ -32,14 +32,14 @@
   }
 }
 
-body { background-color: #F2F6D0 }
-#wrapper {
+body { background-color: rgb(200, 200, 200) }
+/* #wrapper {
   width: 960px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 5%;
 }
-#articles {
+#streams {
   display: inline-block;
   overflow: auto;
   width: 60%;
@@ -48,11 +48,11 @@ body { background-color: #F2F6D0 }
 #notes {
   float: right;
   width: 30%;
-}
+} */
 textarea, input {
   display: block;
   width: 100%;
-  background-color: #FCF5C7;
+  background-color: rgb(200, 200, 200);
 }
 input {
   height: 36px;
